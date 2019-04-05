@@ -56,7 +56,7 @@
     <footer class="footer is-fixed-bottom">
       <div class="content has-text-centered">
         <p>
-          <strong>Website by</strong> by
+          <strong>Website</strong> by
           <a href="https://github.com/Chofito">Rodolfo Robles</a>. The source
           code is licensed
           <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The
