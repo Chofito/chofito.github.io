@@ -1,3 +1,5 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Node template
 # Logs
 logs
 *.log
@@ -20,7 +22,7 @@ coverage
 # nyc test coverage
 .nyc_output
 
-# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
 # Bower dependency directory (https://bower.io/)
@@ -38,7 +40,6 @@ jspm_packages/
 
 # TypeScript v1 declaration files
 typings/
-dist/
 
 # Optional npm cache directory
 .npm
@@ -67,11 +68,17 @@ dist/
 # nuxt.js build output
 .nuxt
 
+# Nuxt generate
+dist
+
 # vuepress build output
 .vuepress/dist
 
 # Serverless directories
 .serverless
 
-# FuseBox cache
-.fusebox/
+# IDE
+.idea
+
+# Service worker
+sw.*
