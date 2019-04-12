@@ -96,6 +96,10 @@ export default {
             {
               title: 'Infografia #1',
               to: { name: 'info1' }
+            },
+            {
+              title: 'Investigación #1',
+              to: { name: 'inv1' }
             }
           ]
         }
