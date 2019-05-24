@@ -100,6 +100,18 @@ export default {
             {
               title: 'Investigación #1',
               to: { name: 'inv1' }
+            },
+            {
+              title: 'Infografia #2',
+              to: { name: 'info2' }
+            },
+            {
+              title: 'Investigacion #2',
+              to: { name: 'inv2'}
+            },
+            {
+              title: 'Reporte',
+              to: { name: 'reporte' }
             }
           ]
         }

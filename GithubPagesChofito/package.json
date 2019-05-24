@@ -1,44 +1,27 @@
 {
-  "name": "personalblog",
+  "name": "chofitoblog",
   "version": "1.0.0",
-  "description": "My ace Nuxt.js project",
-  "author": "Chofito &lt;Darksun&gt;",
+  "description": "My sublime Nuxt.js project",
+  "author": "Chofito",
   "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "generate": "nuxt generate"
   },
   "dependencies": {
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.4.0",
+    "@nuxtjs/bulma": "^1.2.1",
+    "@nuxtjs/pwa": "^2.6.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
     "@fortawesome/free-brands-svg-icons": "^5.8.1",
     "@fortawesome/free-regular-svg-icons": "^5.8.1",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
-    "@fortawesome/vue-fontawesome": "^0.1.6",
-    "@nuxtjs/bulma": "^1.2.1",
-    "cross-env": "^5.2.0",
-    "nuxt": "^2.4.0",
-    "vue-pdf": "^4.0.6"
+    "@fortawesome/vue-fontawesome": "^0.1.6"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^0.0.1",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.15.1",
-    "eslint-config-prettier": "^4.1.0",
-    "eslint-config-standard": ">=12.0.0",
-    "eslint-loader": "^2.1.2",
-    "eslint-plugin-import": ">=2.16.0",
-    "eslint-plugin-jest": ">=22.3.0",
-    "eslint-plugin-node": ">=8.0.1",
-    "eslint-plugin-nuxt": ">=0.4.2",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-promise": ">=4.0.1",
-    "eslint-plugin-standard": ">=4.0.0",
-    "eslint-plugin-vue": "^5.2.2",
-    "nodemon": "^1.18.9",
-    "prettier": "^1.16.4"
+    "nodemon": "^1.18.9"
   }
 }
