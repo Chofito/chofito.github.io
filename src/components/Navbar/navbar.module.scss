@@ -1,0 +1,93 @@
+.navbar {
+  border-bottom: 1px solid #e3e3e3;
+  min-height: 10vh;
+  transition: ease 125ms;
+  background: white;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (max-width: 980px) {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.navbarContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 2rem;
+
+  @media only screen and (max-width: 980px) {
+    padding: 2rem 1rem;
+  }
+}
+
+.navbarPanelContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+
+  @media only screen and (min-width: 870px) {
+    display: none;
+  }
+}
+
+.navbarItems {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.leftItems {
+  justify-content: flex-start;
+}
+
+.rightItems {
+  justify-content: flex-end;
+
+  @media only screen and (max-width: 870px) {
+    display: none;
+  }
+}
+
+.sidebarButtonRight {
+  justify-content: flex-end;
+
+  @media only screen and (min-width: 870px) {
+    display: none;
+  }
+}
+
+.hidePanel {
+  display: none;
+}
+
+.mainItem {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  & > span {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+.panelItem {
+  margin:  0 0 12px 8px;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.linkItem {
+  margin-right: 2rem;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}

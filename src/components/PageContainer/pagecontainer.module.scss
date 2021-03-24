@@ -1,0 +1,8 @@
+@import "../../styles/colors";
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background-color: #1A1A1D;
+}

@@ -1,0 +1,14 @@
+.container {
+  padding: 3rem 5rem;
+
+  @media only screen and (max-width: 800px) {
+    padding: 2.5rem;
+  }
+}
+
+.abilitiesContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

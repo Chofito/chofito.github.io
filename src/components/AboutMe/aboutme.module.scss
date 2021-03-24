@@ -1,0 +1,10 @@
+.aboutMeContainer {
+  padding: 4rem;
+}
+
+.svgContainer {
+  & > svg {
+    width: 240px;
+    height: auto;
+  }
+}
