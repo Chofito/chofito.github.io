@@ -1,5 +1,24 @@
+import { Element } from 'react-scroll';
+import SectionTitle from '../SectionTitle';
+import SectionContainer from '../SectionContainer';
+
+import { ReactComponent as UnderConstruction } from '../../assets/underconstruction.svg';
+import styles from './portfolio.module.scss';
+
 const Portfolio = () => (
-  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid deleniti dolore earum illo inventore labore minus nam natus nesciunt praesentium, quam sapiente, similique sit, voluptate. Eum numquam quas voluptatibus.</div>
+  <Element name="portfolio">
+    <SectionContainer>
+      <SectionTitle>
+        Portfolio
+      </SectionTitle>
+      <div className={styles.portfolioContainer}>
+        <UnderConstruction />
+        WIP section to share with you some examples of what can I do, but for now you can access to the source code my
+        Open Source personal website :)
+        <a href={`https://github.com/chofito/chofito.github.io`} rel="noreferrer" target="_blank">Click Here</a>
+      </div>
+    </SectionContainer>
+  </Element>
 );
 
 export default Portfolio

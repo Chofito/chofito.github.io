@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import { RiSpaceShipLine, FaGithub, IoMenu } from 'react-icons/all';
+import { Link } from 'react-scroll';
 
 import { githubUrl } from '../../settings';
 import { openInNewTab } from '../../utils';
 
 import styles from './navbar.module.scss';
-import {useState} from 'react';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -19,9 +20,9 @@ const Navbar = () => {
           </div>
         </div>
         <div className={`${styles.navbarItems} ${styles.rightItems}`}>
-          <span className={styles.linkItem}>About Me</span>
-          <span className={styles.linkItem}>Portfolio</span>
-          <span className={styles.linkItem}>Contact</span>
+          <Link to="aboutMe" offset={-75}><span className={styles.linkItem}>About Me</span></Link>
+          <Link to="portfolio" offset={-75}><span className={styles.linkItem}>Portfolio</span></Link>
+          <Link to="contact" offset={-200}><span className={styles.linkItem}>Contact</span></Link>
           <span className={styles.linkItem} onClick={() => openInNewTab(githubUrl)}>
             <FaGithub size={24} />
           </span>
@@ -34,9 +35,9 @@ const Navbar = () => {
         </div>
       </div>
       <div className={`${styles.navbarPanelContainer} ${open ? '' : styles.hidePanel}`}>
-        <span className={styles.panelItem}>About Me</span>
-        <span className={styles.panelItem}>Portfolio</span>
-        <span className={styles.panelItem}>Contact</span>
+        <Link to="aboutMe" offset={-75}><span className={styles.panelItem}>About Me</span></Link>
+        <Link to="portfolio" offset={-75}><span className={styles.panelItem}>Portfolio</span></Link>
+        <Link to="contact" offset={-200}><span className={styles.panelItem}>Contact</span></Link>
         <span className={styles.panelItem} onClick={() => openInNewTab(githubUrl)}>
           <FaGithub size={24} />
         </span>

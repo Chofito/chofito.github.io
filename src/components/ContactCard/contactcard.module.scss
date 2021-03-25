@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 20px 0 rgba(102,102,102,0.2);
+  border-radius: 18px;
+  padding: 1.5rem;
+  transition: ease 200ms;
+  width: 180px;
+  height: 180px;
+  cursor: pointer;
+  margin: 0.5rem;
+
+  @media only screen and (max-width: 570px) {
+    width: 80px;
+    height: 80px;
+  }
+
+  & > svg {
+    margin: 4px 6px;
+  }
+}
+
+.container:hover {
+  transform: scale(1.1);
+}
+
+.name, .contactInfo {
+  @media only screen and (max-width: 570px) {
+    display: none;
+  }
+}

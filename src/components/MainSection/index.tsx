@@ -37,17 +37,15 @@ const MainSection = () => (
               .start()
           }}
         />
-        {/*<p>
-          Programador Junior con amplios conocimientos en desarrollo web, móvil y backend, apasionado con la innovación
-          y creación de soluciones, amante de los videojuegos y de los grandes misterios del universo 🌠🎮🍕
-        </p>*/}
       </div>
-      <Button onClick={() => {}} color="primary">
-        Contactar
-      </Button>
+      <Link to="contact" offset={-200}>
+        <Button color="primary">
+          Hire Me
+        </Button>
+      </Link>
     </div>
     <div className={styles.mouseContainer}>
-      <Link to="abilities" offset={-60}>
+      <Link to="aboutMe" offset={-75}>
         <div className={styles.movingMouseHolder}>
           <div className={styles.mouse}>
             <div className={styles.mouseButton}>&nbsp;</div>

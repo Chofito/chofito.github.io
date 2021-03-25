@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 20px 0 rgba(102,102,102,0.2);
+  border-radius: 18px;
+  padding: 1.5rem;
+  margin: 30px 15px;
+
+  @media only screen and (max-width: 48em) {
+    margin: 25px 0;
+  }
+}
+.iconContainer {
+  text-align: center;
+
+  & > svg {
+    padding: 0 10px 0;
+    color: #C3073F;
+  }
+}
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-weight: 500;
+  font-size: 1.15rem;
+  text-align: center;
+}
+.description {
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+}
