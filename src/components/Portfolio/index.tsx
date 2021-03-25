@@ -13,8 +13,8 @@ const Portfolio = () => (
       </SectionTitle>
       <div className={styles.portfolioContainer}>
         <UnderConstruction />
-        WIP section to share with you some examples of what can I do, but for now you can access to the source code my
-        Open Source personal website :)
+        WIP section to share with you some examples of what can I do, but for now you can access to the source code of
+        my Open Source Personal Website :)
         <a href={`https://github.com/chofito/chofito.github.io`} rel="noreferrer" target="_blank">Click Here</a>
       </div>
     </SectionContainer>
