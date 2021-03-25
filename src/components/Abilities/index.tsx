@@ -1,15 +1,7 @@
 import { Element } from 'react-scroll';
 import { Col, Row } from 'react-flexbox-grid';
-import {
-  FaNodeJs,
-  FaPython,
-  FaReact,
-  SiAndroidstudio,
-  SiDjango,
-  SiDotNet,
-  SiKotlin, SiPostgresql,
-  SiTypescript
-} from 'react-icons/all';
+import { FaNodeJs, FaReact, FaPython } from 'react-icons/fa';
+import { SiAndroidstudio, SiDjango, SiDotNet, SiKotlin, SiPostgresql, SiTypescript } from 'react-icons/si';
 
 import Ability from '../Ability';
 import SectionTitle from '../SectionTitle';

@@ -2,9 +2,15 @@ import {
   FaCloud,
   FaReact,
   FaAndroid,
+} from 'react-icons/fa';
+
+import {
   GiTechnoHeart,
+} from 'react-icons/gi';
+
+import {
   CgGames
-} from 'react-icons/all'
+} from 'react-icons/cg';
 
 const abilities = [
   {

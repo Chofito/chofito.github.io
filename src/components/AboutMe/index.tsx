@@ -1,10 +1,13 @@
 import { Element } from 'react-scroll';
 import {
   MdEmail,
+} from 'react-icons/md';
+
+import {
   FaTwitter,
   FaLinkedin,
   FaGithub
-} from 'react-icons/all';
+} from 'react-icons/fa';
 
 import Button from '../Button';
 import SectionContainer from '../SectionContainer';

@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { RiSpaceShipLine, FaGithub, IoMenu } from 'react-icons/all';
+import { RiSpaceShipLine } from 'react-icons/ri';
+import { FaGithub } from 'react-icons/fa';
+import { IoMenu } from 'react-icons/io5';
 import { Link } from 'react-scroll';
 
 import { githubUrl } from '../../settings';
