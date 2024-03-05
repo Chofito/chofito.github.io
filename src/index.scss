@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dark-mode {
+  filter: invert(92%) hue-rotate(180deg);
+
+  :is(img, iframe, video), #dark-mode-switch {
+    filter: invert(100%) hue-rotate(180deg);
+  }
+}
