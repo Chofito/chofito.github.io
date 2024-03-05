@@ -29,7 +29,7 @@ const Resources = () => {
         </li>
         <li>
           <a
-            href="https://1drv.ms/b/s!Ak0agVDRW2QrguxNVgfrqAej5VZb4g?e=GGeTlI"
+            href="https://1drv.ms/b/s!Ak0agVDRW2QrguxOD_bBpMx-OcKCYQ?e=RrQpim"
             target="_blank"
             className="text-blue-500 underline"
           >
