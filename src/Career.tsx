@@ -6,7 +6,7 @@ const Career = () => {
       <p
         className="mb-2"
       >
-        Engineer with 5+ years of experience in web development, software architecture, R+D and user design. I have worked with a variety of technologies including React, Nodejs, .NetCore, Python, Postgresql, Nextjs and many more. 
+        Engineer with 5+ years of experience in web development, software architecture, R+D and user design. I have worked with a variety of technologies including React, Nodejs, Expressjs, .NetCore, Python, Postgresql Mongodb, Nextjs, GoLang and many more.
       </p>
       <p
         className="mb-2"
