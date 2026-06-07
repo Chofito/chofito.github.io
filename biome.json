@@ -7,7 +7,21 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!!**/dist", "!!**/node_modules", "!!**/.cursor"]
+    "includes": [
+      "**",
+      "!!**/dist",
+      "!!**/dist-ssr",
+      "!!**/node_modules",
+      "!!**/coverage",
+      "!!**/.cursor",
+      "!!**/.claude",
+      "!!**/.vscode",
+      "!!**/.idea",
+      "!!**/bun.lock",
+      "!!**/package-lock.json",
+      "!!**/pnpm-lock.yaml",
+      "!!**/yarn.lock"
+    ]
   },
   "formatter": {
     "enabled": true,

@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { terminalCommands } from '../../data/bio';
 import { useFollowScroll } from '../../hooks/useFollowScroll';
+import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 import { CommandBlock } from './CommandBlock';
 
 type TerminalTabProps = {
@@ -9,12 +10,14 @@ type TerminalTabProps = {
 
 export function TerminalTab({ isActive = true }: TerminalTabProps) {
   const contentRef = useRef<HTMLDivElement>(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
   const [step, setStep] = useState(0);
   const [skip, setSkip] = useState(false);
 
-  const allDone = skip || step >= terminalCommands.length;
+  const effectiveSkip = skip || prefersReducedMotion;
+  const allDone = effectiveSkip || step >= terminalCommands.length;
 
-  useFollowScroll(contentRef, isActive && !allDone);
+  useFollowScroll(contentRef, isActive && !allDone && !prefersReducedMotion);
 
   const handleSkip = () => {
     setSkip(true);
@@ -23,7 +26,7 @@ export function TerminalTab({ isActive = true }: TerminalTabProps) {
 
   return (
     <div className="content-safe-bottom relative p-4 text-sm select-text">
-      {!allDone && (
+      {!allDone && !prefersReducedMotion && (
         <button
           type="button"
           onClick={handleSkip}
@@ -36,13 +39,13 @@ export function TerminalTab({ isActive = true }: TerminalTabProps) {
 
       <div ref={contentRef} className="space-y-4">
         {terminalCommands.map((command, index) => {
-          if (!skip && index > step) {
+          if (!effectiveSkip && index > step) {
             return null;
           }
 
           const isCurrent =
-            !skip && index === step && step < terminalCommands.length;
-          const isFinished = skip || index < step;
+            !effectiveSkip && index === step && step < terminalCommands.length;
+          const isFinished = effectiveSkip || index < step;
 
           return (
             <CommandBlock

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 
 type TypewriterLineProps = {
   text: string;
@@ -15,11 +16,21 @@ export function TypewriterLine({
   className = '',
   paused = false,
 }: TypewriterLineProps) {
+  const prefersReducedMotion = usePrefersReducedMotion();
   const [displayed, setDisplayed] = useState('');
   const indexRef = useRef(0);
   const completedRef = useRef(false);
 
   useEffect(() => {
+    if (prefersReducedMotion) {
+      setDisplayed(text);
+      if (!completedRef.current) {
+        completedRef.current = true;
+        onComplete?.();
+      }
+      return;
+    }
+
     if (paused || completedRef.current) {
       return;
     }
@@ -42,7 +53,7 @@ export function TypewriterLine({
     }, speed);
 
     return () => window.clearInterval(timer);
-  }, [text, speed, onComplete, paused]);
+  }, [text, speed, onComplete, paused, prefersReducedMotion]);
 
   return <span className={className}>{displayed}</span>;
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { LoaderVariant } from '../../../data/terminal/types';
+import { usePrefersReducedMotion } from '../../../hooks/usePrefersReducedMotion';
 
 const BRAILLE = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
 const DOTS = ['.', '..', '...'];
@@ -30,10 +31,11 @@ export function AsciiLoader({
   label,
   paused = false,
 }: AsciiLoaderProps) {
+  const prefersReducedMotion = usePrefersReducedMotion();
   const [tick, setTick] = useState(0);
 
   useEffect(() => {
-    if (paused) return;
+    if (paused || prefersReducedMotion) return;
 
     const timer = window.setInterval(
       () => {
@@ -43,7 +45,7 @@ export function AsciiLoader({
     );
 
     return () => window.clearInterval(timer);
-  }, [variant, paused]);
+  }, [variant, paused, prefersReducedMotion]);
 
   const frame = frameFor(variant, tick);
 

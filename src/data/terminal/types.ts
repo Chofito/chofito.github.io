@@ -29,6 +29,3 @@ export type TerminalCommand = {
   lines: readonly OutputLine[];
   pauseAfter?: number;
 };
-
-/** @deprecated use OutputLine */
-export type TerminalOutputLine = OutputLine;

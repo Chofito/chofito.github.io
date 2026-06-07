@@ -55,10 +55,19 @@ Use `rich` template tags in `script.ts` (parsed by [`parseRich.ts`](src/data/ter
 **Builders** in [`builders.ts`](src/data/terminal/builders.ts):
 
 ```ts
-cmd('$ whoami', rich`**${profile.alias}** — ${profile.name}`)
+cmd('$ whoami', richStr(terminalConfig.whoami))
+cmd('$ cat /etc/motd', ...terminalConfig.motd.map(richStr))
+cmd('$ history --oneline', ...terminalConfig.history.map(richStr))
+cmd(
+  '$ neofetch --mini',
+  loader('braille', 'fetching system info'),
+  ...neofetchFromConfig(),
+)
 cmd('$ ls ./links', links())
-cmd('$ history --oneline', list(profile.journey))
-cmd('$ neofetch --mini', loader('braille', 'fetching...'), ...neofetch())
+cmd('$ echo "done"', richStr(terminalConfig.echo))
+
+// plain-text list (no rich markup)
+cmd('$ ls ./items', list(['item a', 'item b']))
 ```
 
 ## Deploy

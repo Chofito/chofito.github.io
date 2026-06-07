@@ -20,9 +20,13 @@ const TAB_CONTENT: Record<TabId, (isActive: boolean) => ReactNode> = {
 };
 
 function getInitialTab(): TabId {
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored === 'terminal' || stored === 'bio') {
-    return stored;
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored === 'terminal' || stored === 'bio') {
+      return stored;
+    }
+  } catch {
+    // private browsing or disabled storage
   }
   return 'terminal';
 }
@@ -33,7 +37,11 @@ function App() {
   const handleTabChange = (id: string) => {
     const tab = id as TabId;
     setActiveTab(tab);
-    localStorage.setItem(STORAGE_KEY, tab);
+    try {
+      localStorage.setItem(STORAGE_KEY, tab);
+    } catch {
+      // private browsing or disabled storage
+    }
   };
 
   return (

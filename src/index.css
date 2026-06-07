@@ -151,3 +151,32 @@ body {
   display: inline-block;
   animation: glitch 3s infinite;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-blink,
+  .text-shimmer,
+  .text-glow,
+  .text-glitch {
+    animation: none;
+  }
+
+  .text-shimmer {
+    background: none;
+    -webkit-text-fill-color: var(--color-editor-accent);
+    color: var(--color-editor-accent);
+  }
+
+  .text-glow {
+    text-shadow:
+      0 0 4px rgba(74, 222, 128, 0.55),
+      0 0 12px rgba(124, 106, 247, 0.25);
+  }
+
+  .text-glitch {
+    transform: none;
+  }
+
+  .cursor-blink {
+    opacity: 1;
+  }
+}

@@ -12,10 +12,12 @@ dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# Editor / agent directories
 .vscode/*
 !.vscode/extensions.json
 .idea
+.cursor
+.claude
 .DS_Store
 *.suo
 *.ntvs*

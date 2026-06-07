@@ -33,14 +33,26 @@ export function loader(variant: LoaderVariant, label?: string): OutputLine {
   return { type: 'loader', variant, label };
 }
 
-export function neofetchRow(label: string, markup: string): OutputLine {
-  const padded = `${label}:`.padEnd(12, ' ');
+export function list(items: readonly string[]): OutputLine {
+  return { type: 'list', items };
+}
+
+export function neofetchRow(
+  label: string,
+  markup: string,
+  labelWidth: number,
+): OutputLine {
+  const padded = `${label}:`.padEnd(labelWidth, ' ');
   return richStr(`${padded} ${markup}`);
 }
 
 export function neofetchFromConfig(): OutputLine[] {
+  const labelWidth = Math.max(
+    ...terminalConfig.neofetch.map(([label]) => label.length + 1),
+  );
+
   return terminalConfig.neofetch.map(([label, markup]) =>
-    neofetchRow(label, markup),
+    neofetchRow(label, markup, labelWidth),
   );
 }
 
