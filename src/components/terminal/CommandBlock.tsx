@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { TerminalCommand } from '../../data/terminal/types';
+import { CommandLine, TypewriterCommandLine } from './CommandLine';
 import { TerminalOutput } from './TerminalOutput';
-import { TypewriterLine } from './TypewriterLine';
 
 type CommandBlockProps = {
   command: TerminalCommand;
@@ -23,7 +23,9 @@ export function CommandBlock({
   if (!animate || skip) {
     return (
       <div className="space-y-1">
-        <p className="font-mono text-sm text-gray-300">{command.input}</p>
+        <p>
+          <CommandLine input={command.input} />
+        </p>
         <TerminalOutput lines={command.lines} paused={paused} />
       </div>
     );
@@ -31,11 +33,10 @@ export function CommandBlock({
 
   if (phase === 'typing') {
     return (
-      <div className="font-mono text-sm">
-        <TypewriterLine
+      <div>
+        <TypewriterCommandLine
           key={command.input}
-          text={command.input}
-          className="text-gray-300"
+          input={command.input}
           paused={paused}
           onComplete={() => setPhase('output')}
         />
@@ -45,7 +46,9 @@ export function CommandBlock({
 
   return (
     <div className="space-y-1">
-      <p className="font-mono text-sm text-gray-300">{command.input}</p>
+      <p>
+        <CommandLine input={command.input} />
+      </p>
       <TerminalOutput lines={command.lines} paused={paused} />
       <PauseThenDone
         pauseAfter={command.pauseAfter ?? 300}

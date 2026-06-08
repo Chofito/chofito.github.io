@@ -59,8 +59,17 @@ CSS keyframe effects in `src/index.css`:
 - `text-glow` — pulsing glow
 - `text-glitch` — jitter transform
 - `cursor-blink` — block cursor blink
+- `text-flicker` — CRT/neon opacity flicker
+- `text-scan` — scanline sweep (gradient clipped to text)
+- `text-rgb` — chromatic red/cyan split
+- `text-ember` — warm flickering amber/orange gradient
+- `slot-roll` / `matrix-roll` / `wave-bob` — per-character motion (drive
+  `{slot:…}` / `{matrix:…}` / `{wave:…}`)
 
-JS-driven spinners via `AsciiLoader` (`dots`, `braille`, `bar` variants).
+JS-driven effects: spinners via `AsciiLoader` (`dots`, `braille`, `bar`), the scramble
+reveals `SlotText` (`{slot:…}`, and `{decrypt:…}` via the `glyphs` prop) and
+`MatrixText` (`{matrix:…}`), and the word cycler `RotateText` (`{rotate:…}`). All pause
+on inactive tabs and fall back to static output under `prefers-reduced-motion`.
 
 Both respect `prefers-reduced-motion: reduce` (hook + CSS media query).
 
@@ -100,6 +109,16 @@ Used in `config.ts` strings and parsed by `parseRich.ts`:
 | `{shimmer:text}` | animated gradient (`text-shimmer`) |
 | `{glow:text}` | pulsing glow (`text-glow`) |
 | `{glitch:text}` | glitch jitter (`text-glitch`) |
+| `{slot:text}` | slot-machine scramble reveal, re-scrambles ~every 10s (`SlotText`, JS-driven) |
+| `{matrix:text}` | digital-rain decode — glyphs rain down then settle (`MatrixText`, JS-driven) |
+| `{flicker:text}` | CRT/neon opacity flicker (`text-flicker`) |
+| `{scan:text}` | bright scanline sweep (`text-scan`) |
+| `{rgb:text}` | chromatic-aberration red/cyan glitch (`text-rgb`) |
+| `{wave:text}` | per-character sine bob (`WaveText` + `wave-char`) |
+| `{decrypt:text}` | hex/crypto scramble decode (`SlotText` w/ `HEX_GLYPHS`) |
+| `{rotate:a\|b\|c}` | typewriter cycling a `\|`-separated list (`RotateText`) |
+| `{ember:text}` | warm flickering amber/orange gradient (`text-ember`) |
+| `{cursor:text}` … `{babel:text}` | per-brand colors (tags in `brandColors.ts` → `text-brand-*`) |
 | `{loader:dots}` | inline `.` / `..` / `...` spinner |
 | `{loader:braille}` | braille spinner |
 | `{loader:bar}` | `[====    ]` progress bar |

@@ -5,16 +5,16 @@
 export const terminalConfig = {
   whoami: '{glow:**Chofito**} {dim:—} Rodolfo Robles',
 
-  hostname: '{glitch:myroom.local} {dim:▸} {accent:Guatemala}',
+  hostname: '{decrypt:myroom.local} {dim:▸} {accent:Guatemala}',
 
   motd: [
     '{glow:Building ecommerce} at {accent:MAX} {dim:— Largest ecommerce & marketplace in Guatemala}',
-    'Deep into {shimmer:AI & LLMs} {dim:for dev workflows}',
-    "{dim:Daily drivers:} {accent:Cursor}{dim:, }{accent:Claude Code}{dim:, }{accent:OpenCode}{dim:, }{accent:Codex} {dim:(I don't care, is funny to have a lot of agents)}",
+    'Deep into {matrix:AI & LLMs} {dim:for dev workflows}',
+    "{dim:Daily drivers:} {cursor:Cursor}{dim:, }{claude:Claude Code}{dim:, }{opencode:OpenCode}{dim:, }{codex:Codex} {dim:(I don't care, is funny to have a lot of agents)}",
   ],
 
   uptime:
-    'in tech since {accent:2018} {dim:—} {shimmer:**8+ years**} {dim:and counting}',
+    'in tech since {accent:2018} {dim:—} {scan:**8+ years**} {dim:and counting}',
 
   history: [
     '{dim:2012 - present}  {accent:weirdo linux user}',
@@ -35,16 +35,19 @@ export const terminalConfig = {
     ['Role', '{glow:**Software Architect**} @ {accent:Distelsa S.A.}'],
     [
       'Stack',
-      '{accent:Next.js}{dim: · }{accent:React Native}{dim: · }{accent:Expo}{dim: · }{accent:TypeScript}',
+      '{nextjs:Next.js}{dim: · }{react-native:React Native}{dim: · }{expo:Expo}{dim: · }{typescript:TypeScript}',
     ],
-    ['Focus', '{shimmer:Building random opensource projects :P}'],
-    ['Currently Reading', '{amber:The Wheel of Time and Babel}'],
-    ['Reads', '{dim:fantasy · sci-fi}'],
+    [
+      'Focus',
+      '{accent:Building} {wave:random} {accent:opensource projects} {dim::P}',
+    ],
+    ['Currently Reading', '{wot:The Wheel of Time}{dim: and }{babel:Babel}'],
+    ['Reads', '{rotate:fantasy|sci-fi}'],
     ['Location', '{accent:Guatemala} {dim:🇬🇹}'],
   ],
 
   interests:
-    '{amber:gaming} {dim:·} {accent:fantasy books} {dim:·} {shimmer:space & sci-fi aesthetics} {dim:·} {glow:retro terminals}',
+    '{ember:gaming} {dim:·} {accent:fantasy books} {dim:·} {accent:space &} {rgb:sci-fi} {accent:aesthetics} {dim:·} {slot:retro terminals}',
 
-  echo: "{dim:that's all for now} {shimmer:✦} {glow:— see you in the commits}",
+  echo: "{dim:that's all for now} {shimmer:✦} {flicker:— see you in the commits}",
 } as const;

@@ -45,7 +45,7 @@ function App() {
   };
 
   return (
-    <div className="app-shell bg-[radial-gradient(ellipse_at_top,_#1a1a2e_0%,_#0a0a0f_70%)]">
+    <div className="app-shell bg-[radial-gradient(ellipse_at_top,_#282c34_0%,_#1b1d23_70%)]">
       <EditorWindow
         title="chofito — zsh"
         tabs={[...TABS]}

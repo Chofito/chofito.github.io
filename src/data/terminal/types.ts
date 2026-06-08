@@ -1,5 +1,29 @@
-export type SpanColor = 'default' | 'dim' | 'amber' | 'accent';
-export type SpanEffect = 'shimmer' | 'glow' | 'glitch';
+export type BrandColor =
+  | 'cursor'
+  | 'claude'
+  | 'opencode'
+  | 'codex'
+  | 'nextjs'
+  | 'react-native'
+  | 'expo'
+  | 'typescript'
+  | 'wot'
+  | 'babel';
+
+export type SpanColor = 'default' | 'dim' | 'amber' | 'accent' | BrandColor;
+export type SpanEffect =
+  | 'shimmer'
+  | 'glow'
+  | 'glitch'
+  | 'slot'
+  | 'matrix'
+  | 'flicker'
+  | 'scan'
+  | 'rgb'
+  | 'wave'
+  | 'decrypt'
+  | 'rotate'
+  | 'ember';
 export type LoaderVariant = 'dots' | 'braille' | 'bar';
 
 export type RichSpan =

@@ -48,6 +48,16 @@ Use `rich` template tags in `script.ts` (parsed by [`parseRich.ts`](src/data/ter
 | `{shimmer:text}` | animated gradient |
 | `{glow:text}` | pulsing glow |
 | `{glitch:text}` | glitch jitter |
+| `{slot:text}` | slot-machine scramble reveal, re-scrambles ~every 10s (JS-driven) |
+| `{matrix:text}` | digital-rain decode — glyphs rain down, then settle (JS-driven) |
+| `{flicker:text}` | CRT/neon opacity flicker |
+| `{scan:text}` | bright scanline sweep across the text |
+| `{rgb:text}` | chromatic-aberration (red/cyan split) glitch |
+| `{wave:text}` | per-character sine-wave bob |
+| `{decrypt:text}` | hex/crypto-style scramble decode (JS-driven) |
+| `{rotate:a\|b\|c}` | typewriter that cycles a `\|`-separated word list (JS-driven) |
+| `{ember:text}` | warm flickering amber/orange gradient |
+| `{cursor:text}` … `{babel:text}` | per-brand colors (see `brandColors.ts`) |
 | `{loader:dots}` | inline `.` / `..` / `...` spinner |
 | `{loader:braille}` | braille spinner |
 | `{loader:bar}` | `[====    ]` progress bar |

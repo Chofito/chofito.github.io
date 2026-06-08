@@ -25,7 +25,7 @@ export function TerminalTab({ isActive = true }: TerminalTabProps) {
   };
 
   return (
-    <div className="content-safe-bottom relative p-4 text-sm select-text">
+    <div className="content-safe-bottom relative min-h-full bg-terminal-bg p-4 text-sm select-text">
       {!allDone && !prefersReducedMotion && (
         <button
           type="button"

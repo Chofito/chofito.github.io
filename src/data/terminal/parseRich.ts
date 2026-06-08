@@ -1,3 +1,4 @@
+import { BRAND_TAG_COLORS } from '../brandColors';
 import type { LoaderVariant, RichSpan, SpanColor, SpanEffect } from './types';
 
 type StyleFlags = {
@@ -8,6 +9,13 @@ type StyleFlags = {
   effect?: SpanEffect;
 };
 
+const BRAND_TAG_STYLES = Object.fromEntries(
+  Object.entries(BRAND_TAG_COLORS).map(([tag, color]) => [
+    tag,
+    { color } satisfies Partial<StyleFlags>,
+  ]),
+);
+
 const TAG_STYLES: Record<string, Partial<StyleFlags>> = {
   dim: { color: 'dim' },
   amber: { color: 'amber' },
@@ -15,6 +23,16 @@ const TAG_STYLES: Record<string, Partial<StyleFlags>> = {
   shimmer: { effect: 'shimmer' },
   glow: { effect: 'glow' },
   glitch: { effect: 'glitch' },
+  slot: { effect: 'slot' },
+  matrix: { effect: 'matrix' },
+  flicker: { effect: 'flicker' },
+  scan: { effect: 'scan' },
+  rgb: { effect: 'rgb' },
+  wave: { effect: 'wave' },
+  decrypt: { effect: 'decrypt' },
+  rotate: { effect: 'rotate' },
+  ember: { effect: 'ember' },
+  ...BRAND_TAG_STYLES,
 };
 
 const LOADER_VARIANTS = new Set<LoaderVariant>(['dots', 'braille', 'bar']);

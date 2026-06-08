@@ -4,22 +4,41 @@
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  --color-editor-bg: #0a0a0f;
-  --color-editor-surface: #14141a;
-  --color-editor-panel: #1a1a22;
-  --color-editor-border: #2a2a35;
-  --color-editor-tab-active: #1e1e28;
-  --color-editor-tab-inactive: #14141a;
-  --color-editor-accent: #7c6af7;
-  --color-terminal-green: #4ade80;
-  --color-terminal-amber: #fbbf24;
-  --color-terminal-dim: #6b7280;
-  --color-syntax-keyword: #c792ea;
-  --color-syntax-string: #c3e88d;
-  --color-syntax-comment: #546e7a;
-  --color-syntax-property: #82aaff;
-  --color-syntax-number: #f78c6c;
-  --color-syntax-punctuation: #89ddff;
+  --color-editor-bg: #1b1d23;
+  --color-editor-surface: #282c34;
+  --color-editor-panel: #21252b;
+  --color-editor-border: #3e4452;
+  --color-editor-tab-active: #282c34;
+  --color-editor-tab-inactive: #21252b;
+  --color-editor-accent: #61afef;
+  --color-terminal-bg: #1e2127;
+  --color-terminal-green: #abb2bf;
+  --color-terminal-amber: #d19a66;
+  --color-terminal-dim: #5c6370;
+  --color-terminal-command: #56b6c2;
+  --color-terminal-path: #61afef;
+  --color-terminal-flag: #c678dd;
+  --color-syntax-keyword: #c678dd;
+  --color-syntax-string: #98c379;
+  --color-syntax-comment: #5c6370;
+  --color-syntax-property: #e06c75;
+  --color-syntax-number: #d19a66;
+  --color-syntax-punctuation: #abb2bf;
+  --color-brand-cursor: #7c6af7;
+  --color-brand-claude: #d97757;
+  --color-brand-opencode: #f97316;
+  --color-brand-codex: #10a37f;
+  --color-brand-nextjs: #ffffff;
+  --color-brand-react-native: #61dafb;
+  --color-brand-expo: #818cf8;
+  --color-brand-typescript: #4d9fec;
+  --color-brand-wot: #d4a84b;
+  --color-brand-babel: #b56576;
+  --color-brand-email: #e06c75;
+  --color-brand-github: #a371f7;
+  --color-brand-x: #ffffff;
+  --color-brand-linkedin: #4d9fe0;
+  --color-brand-chofito: #9cdcfe;
 }
 
 html,
@@ -95,15 +114,13 @@ body {
 .text-shimmer {
   background: linear-gradient(
     90deg,
-    #ef4444 0%,
-    #f97316 12%,
-    #eab308 24%,
-    #22c55e 36%,
-    #06b6d4 48%,
-    #3b82f6 60%,
-    #8b5cf6 72%,
-    #ec4899 84%,
-    #ef4444 100%
+    #61afef 0%,
+    #56b6c2 16%,
+    #98c379 33%,
+    #e5c07b 50%,
+    #d19a66 66%,
+    #c678dd 83%,
+    #e06c75 100%
   );
   background-size: 200% auto;
   background-clip: text;
@@ -116,13 +133,13 @@ body {
   0%,
   100% {
     text-shadow:
-      0 0 4px rgba(74, 222, 128, 0.55),
-      0 0 12px rgba(124, 106, 247, 0.25);
+      0 0 4px rgba(97, 175, 239, 0.5),
+      0 0 12px rgba(198, 120, 221, 0.25);
   }
   50% {
     text-shadow:
-      0 0 8px rgba(74, 222, 128, 0.85),
-      0 0 20px rgba(124, 106, 247, 0.45);
+      0 0 8px rgba(97, 175, 239, 0.8),
+      0 0 20px rgba(198, 120, 221, 0.45);
   }
 }
 
@@ -152,24 +169,219 @@ body {
   animation: glitch 3s infinite;
 }
 
+@keyframes slot-roll {
+  0% {
+    transform: translateY(-0.4em);
+  }
+  50% {
+    transform: translateY(0.4em);
+  }
+  100% {
+    transform: translateY(-0.4em);
+  }
+}
+
+.slot-rolling {
+  display: inline-block;
+  animation: slot-roll 0.18s linear infinite;
+  opacity: 0.75;
+}
+
+@keyframes matrix-roll {
+  0% {
+    transform: translateY(-0.5em);
+    opacity: 0.2;
+  }
+  60% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(0.5em);
+    opacity: 0.2;
+  }
+}
+
+.matrix-rolling {
+  display: inline-block;
+  color: #98c379;
+  animation: matrix-roll 0.16s linear infinite;
+}
+
+@keyframes flicker {
+  0%,
+  19%,
+  21%,
+  49%,
+  53%,
+  100% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  52% {
+    opacity: 0.25;
+  }
+  70% {
+    opacity: 0.85;
+  }
+}
+
+.text-flicker {
+  animation: flicker 3.5s linear infinite;
+}
+
+@keyframes scan-sweep {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.text-scan {
+  background: linear-gradient(
+    100deg,
+    currentColor 42%,
+    #ffffff 50%,
+    currentColor 58%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: scan-sweep 2.6s linear infinite;
+}
+
+@keyframes rgb-split {
+  0%,
+  100% {
+    text-shadow:
+      -1px 0 rgba(255, 0, 64, 0.7),
+      1px 0 rgba(0, 255, 255, 0.7);
+  }
+  25% {
+    text-shadow:
+      -2px 0 rgba(255, 0, 64, 0.7),
+      2px 0 rgba(0, 255, 255, 0.7);
+  }
+  50% {
+    text-shadow:
+      1px 0 rgba(255, 0, 64, 0.7),
+      -1px 0 rgba(0, 255, 255, 0.7);
+  }
+}
+
+.text-rgb {
+  display: inline-block;
+  animation: rgb-split 0.9s ease-in-out infinite;
+}
+
+@keyframes wave-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.35em);
+  }
+}
+
+.wave-char {
+  display: inline-block;
+  animation: wave-bob 1.4s ease-in-out infinite;
+}
+
+@keyframes ember-glow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.92;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 1;
+  }
+  73% {
+    opacity: 0.8;
+  }
+}
+
+.text-ember {
+  background: linear-gradient(
+    90deg,
+    #f97316,
+    #fbbf24,
+    #ef4444,
+    #f59e0b,
+    #f97316
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: ember-glow 3s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cursor-blink,
   .text-shimmer,
   .text-glow,
-  .text-glitch {
+  .text-glitch,
+  .text-flicker,
+  .text-scan,
+  .text-rgb,
+  .text-ember,
+  .wave-char,
+  .slot-rolling,
+  .matrix-rolling {
     animation: none;
   }
 
-  .text-shimmer {
+  .slot-rolling,
+  .matrix-rolling,
+  .wave-char {
+    transform: none;
+    opacity: 1;
+  }
+
+  .matrix-rolling {
+    color: inherit;
+  }
+
+  .text-flicker {
+    opacity: 1;
+  }
+
+  .text-rgb {
+    text-shadow: none;
+  }
+
+  .text-ember {
     background: none;
+    -webkit-text-fill-color: var(--color-terminal-amber);
+    color: var(--color-terminal-amber);
+  }
+
+  .text-shimmer,
+  .text-scan {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+  }
+
+  .text-shimmer {
     -webkit-text-fill-color: var(--color-editor-accent);
     color: var(--color-editor-accent);
   }
 
   .text-glow {
     text-shadow:
-      0 0 4px rgba(74, 222, 128, 0.55),
-      0 0 12px rgba(124, 106, 247, 0.25);
+      0 0 4px rgba(97, 175, 239, 0.5),
+      0 0 12px rgba(198, 120, 221, 0.25);
   }
 
   .text-glitch {
